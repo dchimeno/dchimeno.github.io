@@ -1,0 +1,82 @@
+site_name: Daniel Chimeno
+site_url: https://chimeno.me
+theme:
+  name: material
+  custom_dir: overrides  
+  favicon: assets/favicon.png
+  icon:
+    repo: material/github
+    logo: octicons/cpu-24
+  features:
+    - navigation.tabs
+    # - navigation.indexes  
+    # - navigation.footer
+    - content.code.copy # show copy button
+
+extra_css:
+  - stylesheets/extra.css
+# extra_javascript:
+#   - javascript/extra.js
+
+
+# material theme things
+nav:
+  - home: index.md
+  - kb: 
+    - kb/index.md
+    - clickhouse: kb/clickhouse.md
+    - duckdb: kb/duckdb.md
+  - blog:
+     - blog/index.md
+  - about:
+     - about.md
+  - now:
+     - now.md
+
+plugins:
+  - search
+  - social
+  - blog:
+      post_excerpt: required
+      post_url_format: "{slug}"
+      authors: false
+      draft_if_future_date: true
+  - privacy # https://squidfunk.github.io/mkdocs-material/setup/ensuring-data-privacy/
+
+extra:
+  social:
+    - icon: material/email
+      link: mailto:daniel@chimeno.me
+
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/chimeno
+
+    - icon: fontawesome/brands/github
+      link: https://github.com/dchimeno
+
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/dchimeno/
+
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/chimeno.me
+
+
+  generator: false
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+
+#  to explore
+# https://pypi.org/project/mkdocs-literate-nav/
+# pip install mkdocs-encryptcontent-plugin
+# https://pawamoy.github.io/markdown-exec/gallery/#exec-2--result
